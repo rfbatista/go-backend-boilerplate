@@ -30,7 +30,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_HASHICORP_ORGANIZATION_NAME: ${{ secrets.TERRAFORM_ORGANIZATION_NAME }}
         TF_HASHICORP_WORKSPACE_NAME: ${{ secrets.TERRAFORM_WORKSPACE_NAME }}
-        TF_HASHICORP_TOKEN: ${{ secrets.TERRAFORM_TOKEN }}
+        TF_HASHICORP_TOKEN: ${{ secrets.TERRAFORM_API_TOKEN }}
         TF_HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         TF_HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
       run: terraform init
@@ -48,7 +48,7 @@ jobs:
       continue-on-error: true
 
     - name: Update Pull Request
-      uses: actions/github-script@6
+      uses: actions/github-script@v6
       if: github.event_name == 'pull_request'
       env:
         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
