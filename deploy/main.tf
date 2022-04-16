@@ -1,11 +1,11 @@
 variable "HEROKU_API_KEY" {
-	type = string
-	description = "API key for Heroku authentication"
+  type        = string
+  description = "API key for Heroku authentication"
 }
 
 variable "HEROKU_EMAIL" {
-	type = string
-	description = "API key for Heroku authentication"
+  type        = string
+  description = "API key for Heroku authentication"
 }
 
 provider "heroku" {

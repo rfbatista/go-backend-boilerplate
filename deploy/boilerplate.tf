@@ -5,7 +5,7 @@ resource "heroku_app" "boilerplate" {
 
 resource "heroku_build" "this" {
   depends_on = [heroku_addon.postgres]
-  app = heroku_app.this.id
+  app        = heroku_app.this.id
   source = {
     path = "../pkg"
   }
@@ -16,5 +16,5 @@ resource "heroku_build" "this" {
 }
 
 output "web_url" {
-  value = heroku_app.this.web_url 
+  value = heroku_app.this.web_url
 }
