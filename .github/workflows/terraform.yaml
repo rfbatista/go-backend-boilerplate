@@ -33,18 +33,18 @@ jobs:
         TF_HASHICORP_TOKEN: ${{ secrets.TERRAFORM_API_TOKEN }}
         TF_HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         TF_HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-      run: terraform init
+      run: terraform init -chdir=deploy
 
 
     - name: Terraform Validate
       id: validate
-      run: terraform validate -no-color
+      run: terraform validate -no-color -chdir=deploy
 
 
     - name: Terraform Plan
       id: plan
       if: github.event_name == 'pull_request'
-      run: terraform plan -no-color -input=false
+      run: terraform plan -no-color -input=false -chdir=deploy
       continue-on-error: true
 
     - name: Update Pull Request
