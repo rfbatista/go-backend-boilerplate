@@ -4,14 +4,13 @@ resource "heroku_app" "boilerplate" {
 }
 
 resource "heroku_build" "this" {
-  depends_on = [heroku_addon.postgres]
-  app        = heroku_app.this.id
+  app        = heroku_app.boilerplate.id
   source = {
     path = "../pkg"
   }
 
   provisioner "local-exec" {
-    command = "bash ./scripts/health-check ${heroku_app.this.web_url}"
+    command = "bash ../scripts/health-check ${heroku_app.boilerplate.web_url}"
   }
 }
 
