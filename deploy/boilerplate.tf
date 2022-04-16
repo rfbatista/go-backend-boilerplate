@@ -1,3 +1,7 @@
+variable "APPLICATION_PATH" {
+  type        = string
+  description = "Absolute path to source code"
+}
 resource "heroku_app" "boilerplate" {
   name   = "golang_boilerplate"
   region = "us"
@@ -7,7 +11,7 @@ resource "heroku_build" "boilerplate" {
   app        = heroku_app.boilerplate.id
   buildpacks = ["https://github.com/heroku/heroku-buildpack-go"]
   source {
-    path = "../pkg"
+    path = var.APPLICATION_PATH
   }
 
   provisioner "local-exec" {
