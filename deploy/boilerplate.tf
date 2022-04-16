@@ -4,7 +4,7 @@ resource "heroku_app" "boilerplate" {
 }
 
 resource "heroku_build" "this" {
-  app        = heroku_app.boilerplate.id
+  app = heroku_app.boilerplate.id
   source = {
     path = "../pkg"
   }
