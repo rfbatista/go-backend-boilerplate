@@ -55,7 +55,7 @@ jobs:
         TF_VAR_HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         TF_VAR_HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
         TF_VAR_APPLICATION_PATH: '${{ github.workspace }}/pkg'
-      run: echo '${{ github.workspace }}/pkg' && terraform plan -no-color -input=false
+      run: echo '${{ github.workspace }}/pkg' && ls '${{ github.workspace }}/pkg' && terraform plan -no-color -input=false
       continue-on-error: true
 
     - name: Update Pull Request
