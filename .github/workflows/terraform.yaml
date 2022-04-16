@@ -54,7 +54,7 @@ jobs:
         TF_VAR_HASHICORP_TOKEN: ${{ secrets.TERRAFORM_API_TOKEN }}
         TF_VAR_HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         TF_VAR_HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-      run: terraform plan -no-color -input=false
+      run: ls && terraform plan -no-color -input=false
       continue-on-error: true
 
     - name: Update Pull Request
