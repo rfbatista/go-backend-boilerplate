@@ -22,7 +22,7 @@ jobs:
 
     - name: Terraform Format
       id: fmt
-      run: terraform fmt -check
+      run: cd deploy && terraform fmt -check
 
     - name: Terraform Init
       id: init
@@ -33,18 +33,18 @@ jobs:
         TF_HASHICORP_TOKEN: ${{ secrets.TERRAFORM_API_TOKEN }}
         TF_HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         TF_HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-      run: terraform init -chdir=deploy
+      run: cd deploy && terraform init
 
 
     - name: Terraform Validate
       id: validate
-      run: terraform validate -no-color -chdir=deploy
+      run: cd deploy && terraform validate -no-color
 
 
     - name: Terraform Plan
       id: plan
       if: github.event_name == 'pull_request'
-      run: terraform plan -no-color -input=false -chdir=deploy
+      run: cd deploy && terraform plan -no-color -input=false
       continue-on-error: true
 
     - name: Update Pull Request
