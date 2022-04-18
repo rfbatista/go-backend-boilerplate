@@ -4,8 +4,8 @@ provider "heroku" {
 }
 
 resource "heroku_app" "boilerplate" {
-  name   = "golang_boilerplate"
-  region = "us"
-	stack = "container"
-	buildpacks = ["heroku/go"]
+  name       = "golang_boilerplate"
+  region     = "us"
+  stack      = "container"
+  buildpacks = ["heroku/go"]
 }
