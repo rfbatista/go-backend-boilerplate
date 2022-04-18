@@ -96,8 +96,8 @@ jobs:
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        TF_VAR_HASHICORP_ORGANIZATION_NAME: ${{ secrets.HASHICORP_ORGANIZATION_NAME }}
-        TF_VAR_HASHICORP_WORKSPACE_NAME: ${{ secrets.HASHICORP_WORKSPACE_NAME }}
-        TF_VAR_HASHICORP_TOKEN: ${{ secrets.HASHICORP_TOKEN }}
+        TF_VAR_HASHICORP_ORGANIZATION_NAME: ${{ secrets.TERRAFORM_ORGANIZATION_NAME }}
+        TF_VAR_HASHICORP_WORKSPACE_NAME: ${{ secrets.TERRAFORM_WORKSPACE_NAME }}
+        TF_VAR_HASHICORP_TOKEN: ${{ secrets.TERRAFORM_API_TOKEN }}
         TF_VAR_HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         TF_VAR_HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
