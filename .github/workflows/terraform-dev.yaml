@@ -3,7 +3,7 @@ name: Terraform Production
 on:
   push:
     branches:
-      - main 
+      - develop 
   pull_request:
 
 jobs:
@@ -93,7 +93,7 @@ jobs:
       run: exit 1
 
     - name: Terraform Apply
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'  
+      if: github.ref == 'refs/heads/develop' && github.event_name == 'push'  
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_VAR_HASHICORP_ORGANIZATION_NAME: ${{ secrets.TERRAFORM_ORGANIZATION_NAME }}
