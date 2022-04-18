@@ -8,7 +8,7 @@ variable "HEROKU_EMAIL" {
   description = "API key for Heroku authentication"
 }
 
-provider "heroku" {
-  email   = var.HEROKU_EMAIL
-  api_key = var.HEROKU_API_KEY
+variable "APPLICATION_PATH" {
+  type        = string
+  description = "Absolute path to source code"
 }
