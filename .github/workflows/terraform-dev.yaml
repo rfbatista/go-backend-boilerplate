@@ -93,6 +93,7 @@ jobs:
       run: exit 1
 
     - name: Terraform Apply
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'  
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_VAR_HASHICORP_ORGANIZATION_NAME: ${{ secrets.TERRAFORM_ORGANIZATION_NAME }}
@@ -101,4 +102,4 @@ jobs:
         TF_VAR_HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         TF_VAR_HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
         TF_VAR_APPLICATION_PATH: '${{ github.workspace }}/pkg'
-      run: terraform apply
+      run: terraform apply -auto-approve -input=false
