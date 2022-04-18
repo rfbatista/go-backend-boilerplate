@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform:
-    name: Deploy Site
+    name: Deploy Infrastructure
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -93,7 +93,6 @@ jobs:
       run: exit 1
 
     - name: Terraform Apply
-      uses: hashicorp/terraform-github-actions/apply@v0.4.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_VAR_HASHICORP_ORGANIZATION_NAME: ${{ secrets.TERRAFORM_ORGANIZATION_NAME }}
@@ -101,3 +100,4 @@ jobs:
         TF_VAR_HASHICORP_TOKEN: ${{ secrets.TERRAFORM_API_TOKEN }}
         TF_VAR_HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         TF_VAR_HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+      run: terraform apply
