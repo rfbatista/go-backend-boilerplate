@@ -12,3 +12,8 @@ variable "APPLICATION_PATH" {
   type        = string
   description = "Absolute path to source code"
 }
+
+variable "APPLICATION_ID" {
+  type        = string
+  description = "Application identifier"
+}
