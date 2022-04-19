@@ -4,7 +4,8 @@ provider "heroku" {
 }
 
 resource "heroku_app" "boilerplate" {
-  name       = "golang-boilerplate-24499"
+  id         = var.APPLICATION_ID
+  name       = var.APPLICATION_ID
   region     = "us"
   stack      = "container"
   buildpacks = ["heroku/go"]
