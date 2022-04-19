@@ -4,7 +4,6 @@ provider "heroku" {
 }
 
 resource "heroku_app" "boilerplate" {
-  id         = var.APPLICATION_ID
   name       = var.APPLICATION_ID
   region     = "us"
   stack      = "container"
