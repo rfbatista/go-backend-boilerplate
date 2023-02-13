@@ -3,6 +3,11 @@
 
 # Terraform and Git Action
 
+Application configuration
+```
+APPLICATION_ID
+```
+
 Heroku configuration
 ```
 HEROKU_API_KEY
