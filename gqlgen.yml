@@ -1,6 +1,7 @@
 # Where are all the schema files located? globs are supported eg  src/**/*.graphqls
 schema:
   - graph/schemas/*.graphql
+  - internal/**/*.graphql
 
 # Where should the generated server code go?
 exec:
@@ -42,7 +43,7 @@ resolver:
 # gqlgen will search for any type names in the schema in these go packages
 # if they match it will use them, otherwise it will generate them.
 autobind:
-#  - "github.com/rfbatista/go-backend-boilerplate/graph/model"
+ - "github.com/rfbatista/go-backend-boilerplate/internal/users/usecases"
 
 # This section declares type mapping between the GraphQL and go type systems
 #

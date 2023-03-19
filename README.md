@@ -1,5 +1,10 @@
 # Golang Boilerplate (wip)
 
+# Packages
+
+- Chi https://github.com/go-chi/chi
+- Zap https://github.com/uber-go/zap
+- Validator https://github.com/go-playground/validator
 
 # Terraform and Git Action
 

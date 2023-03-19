@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/99designs/gqlgen v0.17.24
+	github.com/go-chi/chi v1.5.4
 	github.com/spf13/viper v1.11.0
 	github.com/vektah/gqlparser/v2 v2.5.1
 	go.uber.org/zap v1.21.0
